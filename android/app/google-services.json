@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "813278783768",
+    "firebase_url": "https://mynote-4f862-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "mynote-4f862",
+    "storage_bucket": "mynote-4f862.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813278783768:android:89efcd4fb6f9d2c608166d",
+        "android_client_info": {
+          "package_name": "com.example.mynotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "813278783768-vcebsbsafj7ns2frg774ch79vr8d80a9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeRyAN08VDt60KizgqHrn2IdhJrbnjcQ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "813278783768-vcebsbsafj7ns2frg774ch79vr8d80a9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "813278783768-0e47f0ee8gojvihb0fjqhqf8n6qqtj91.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mynotes"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
