@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 
 import '../firebase_options.dart';
 
-class LoginView extends StatefulWidget {
-  const LoginView({Key? key}) : super(key: key);
+class RegisterView extends StatefulWidget {
+  const RegisterView({Key? key}) : super(key: key);
 
   @override
-  State<LoginView> createState() => _LoginViewState();
+  State<RegisterView> createState() => _RegisterViewState();
 }
 
-class _LoginViewState extends State<LoginView> {
+class _RegisterViewState extends State<RegisterView> {
   late final TextEditingController _email;
   late final TextEditingController _password;
   @override
@@ -32,7 +32,7 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Login"),
+        title: const Text("Register View"),
       ),
       body: FutureBuilder(
         future: Firebase.initializeApp(
@@ -76,24 +76,26 @@ class _LoginViewState extends State<LoginView> {
 
                       try {
                         final userCredinital = await FirebaseAuth.instance
-                            .signInWithEmailAndPassword(
+                            .createUserWithEmailAndPassword(
                                 email: email, password: password);
                         debugPrint(userCredinital.toString());
                       } on FirebaseException catch (e) {
-                        if (e.code == 'user-not-found') {
-                          debugPrint('User not found');
-                        } else if (e.code == 'wrong-password') {
-                          debugPrint('Wrong password');
-                          debugPrint(e.code);
+                        if (e.code == 'weak-password') {
+                          debugPrint('Weak Password');
+                        } else if (e.code == 'email-already-in-use') {
+                          debugPrint('Email already in use');
+                        } else if (e.code == 'invalid-email') {
+                          debugPrint('Invalid Email');
                         }
+                        //debugPrint(e.code);
                       }
                     },
-                    child: const Text("Login"),
+                    child: const Text("Register"),
                   ),
                 ],
               );
             default:
-              return const Text("Loading");
+              return const Text("Loadin");
           }
         },
       ),
