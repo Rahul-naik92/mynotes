@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:mynotes/constants/routes.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -38,7 +39,7 @@ class _LoginViewState extends State<LoginView> {
           TextField(
             enableSuggestions: false,
             autocorrect: false,
-            decoration: const InputDecoration(hintText: 'Enter Email Address'),
+            decoration: const InputDecoration(hintText: 'Enter email address'),
             keyboardType: TextInputType.emailAddress,
             controller: _email,
           ),
@@ -46,7 +47,7 @@ class _LoginViewState extends State<LoginView> {
             obscureText: true,
             enableSuggestions: false,
             autocorrect: false,
-            decoration: const InputDecoration(hintText: 'Enter your password'),
+            decoration: const InputDecoration(hintText: 'Enter password'),
             controller: _password,
           ),
           TextButton(
@@ -60,7 +61,7 @@ class _LoginViewState extends State<LoginView> {
                 //log(userCredinital.toString());
                 //debugPrint(userCredinital.toString());
                 Navigator.of(context).pushNamedAndRemoveUntil(
-                  '/notes/',
+                  notesRoute,
                   (route) => false,
                 );
               } on FirebaseException catch (e) {
@@ -79,7 +80,7 @@ class _LoginViewState extends State<LoginView> {
           TextButton(
             onPressed: () {
               Navigator.of(context).pushNamedAndRemoveUntil(
-                '/register',
+                registerRoute,
                 (route) => false,
               );
             },
